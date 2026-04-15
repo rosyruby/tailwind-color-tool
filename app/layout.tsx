@@ -28,6 +28,12 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="utco-5hdBOOYNLz27oE-qsQXZXRjAi0gSSxssNNBwZU"
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
