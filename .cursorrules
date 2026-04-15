@@ -1,0 +1,5 @@
+# Modern Web Frontend Rules
+- 型定義は厳格に行い、anyは原則禁止。
+- ロジックとUIを分離し、計算ロジックはカスタムフック (useColorGenerator.ts) に抽出。
+- カラー計算には chroma-js を使用し、数学的に自然なグラデーションを作成すること。
+- デザインは一貫して Tailwind CSS を使用し、レスポンシブ対応を必須とする。
