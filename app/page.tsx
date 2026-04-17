@@ -8,7 +8,7 @@ type ContrastInfo = {
   whiteRatio: number;
   blackRatio: number;
   textColorClass: "text-white" | "text-black";
-  recommended: "白文字" | "黒文字";
+  recommended: "White text" | "Black text";
   selectedRatio: number;
 };
 
@@ -21,7 +21,7 @@ function getContrastInfo(hex: string): ContrastInfo {
     whiteRatio,
     blackRatio,
     textColorClass: useWhiteText ? "text-white" : "text-black",
-    recommended: useWhiteText ? "白文字" : "黒文字",
+    recommended: useWhiteText ? "White text" : "Black text",
     selectedRatio: useWhiteText ? whiteRatio : blackRatio,
   };
 }
@@ -63,7 +63,7 @@ export default function Home() {
         <section className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
           <h1 className="text-2xl font-semibold tracking-tight">Tailwind Color Palette Generator</h1>
           <p className="mt-2 text-sm text-zinc-600">
-            中心色のHexを入力すると、`50-950`のスケールと`tailwind.config.ts`用コードを生成します。
+            Enter a base hex color to generate a `50-950` scale and a ready-to-use `tailwind.config.ts` snippet.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
             <input
@@ -94,8 +94,8 @@ export default function Home() {
                   return (
                     <div key={key} className="space-y-1.5">
                       <p className="text-xs text-zinc-600">
-                        白 {contrastInfo.whiteRatio.toFixed(2)}:1 / 黒 {contrastInfo.blackRatio.toFixed(2)}:1
-                        {"  "}推奨: {contrastInfo.recommended} ({wcagLevel})
+                        White {contrastInfo.whiteRatio.toFixed(2)}:1 / Black {contrastInfo.blackRatio.toFixed(2)}:1
+                        {"  "}Recommended: {contrastInfo.recommended} ({wcagLevel})
                       </p>
                       <div
                         className={`flex items-center justify-between rounded-xl border border-black/5 px-4 py-3 ${contrastInfo.textColorClass}`}
@@ -146,7 +146,7 @@ export default function Home() {
           </>
         ) : (
           <section className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 shadow-sm">
-            有効なHex（例: `#0EA5E9` / `0EA5E9` / `abc`）を入力してください。
+            Please enter a valid hex color (for example: `#0EA5E9`, `0EA5E9`, or `abc`).
           </section>
         )}
       </main>
